@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+
+  --color-bg: #121614;
+  --color-surface: #1c2420;
+  --color-surface-2: #24302a;
+  --color-fg: #f3efe4;
+  --color-muted: #9aa79a;
+  --color-gold: #e0b15c;
+  --color-ink: #1a1408;
+  --color-line: #314038;
+  --color-hot: #d85a45;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility desk {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+    ellipse 70% 42% at 50% -12%,
+    color-mix(in oklab, var(--color-gold) 18%, transparent),
+    transparent 60%
+  );
+}
